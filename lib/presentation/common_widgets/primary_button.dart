@@ -1,4 +1,5 @@
 part of 'common_widgets_imports.dart';
+
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({super.key, required this.title, required this.onPressed,});
 

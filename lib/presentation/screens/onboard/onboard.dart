@@ -21,7 +21,8 @@ class _OnBoardState extends State<OnBoard> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset(Assets.assetsImagesJournoLogo,
+                Image.asset(
+                  Assets.assetsImagesJournoLogo,
                   color: MyColors.primaryColor,
                   height: 42.h,
                   width: 139.w,
@@ -38,7 +39,10 @@ class _OnBoardState extends State<OnBoard> {
                 61.h.heightBox,
                 PrimaryButton(
                   title: "Get Started",
-                  onPressed: () => AutoRouter.of(context).push(const AuthRoute()),
+                  onPressed: () {
+                    ProductsRepo().getAllProducts();
+                  },
+                  // onPressed: () => AutoRouter.of(context).push(const AuthRoute()),
                 ),
                 SizedBox(height: 61.h),
                 Row(

@@ -5,3 +5,4 @@ import 'package:velocity_x/velocity_x.dart';
 
 part 'primary_button.dart';
 part 'outline_button.dart';
+part 'custom_textfield.dart';
