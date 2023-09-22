@@ -1,22 +1,30 @@
+import 'dart:convert';
+
 import 'package:velocity_x/velocity_x.dart';
 
 import '../data_source/remote/api_client.dart';
 import '../data_source/remote/api_endpoint_urls.dart';
+import '/presentation/screens/products/products_model.dart';
 
 class ProductsRepo extends ApiClient {
   ProductsRepo();
 
-  getAllProducts() async {
+  Future<ProductsModel> getAllProducts() async {
     try {
       final response = await getRequest(path: ApiEndpointUrls.products);
       if (response.statusCode == 200) {
+        final responseData = productsModelFromJson(jsonEncode(response.data[0]));
+        // final responseData = ProductsModel.fromJson(response.data[0]);
         Vx.log(response.data);
+        // Vx.log(responseData);
+        return responseData;
+      } else {
+        ProductsModel();
       }
-      return response;
     } on Exception catch (e) {
-      // The request was made and the server responded with a status code
-      // that falls out of the range of 2xx and is also not 304.
+      ProductsModel();
       Vx.log(e);
     }
+    return ProductsModel();
   }
 }

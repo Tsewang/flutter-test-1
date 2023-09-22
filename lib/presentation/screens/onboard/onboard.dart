@@ -39,10 +39,16 @@ class _OnBoardState extends State<OnBoard> {
                 61.h.heightBox,
                 PrimaryButton(
                   title: "Get Started",
-                  onPressed: () {
-                    ProductsRepo().getAllProducts();
-                  },
-                  // onPressed: () => AutoRouter.of(context).push(const AuthRoute()),
+                  // onPressed: () {
+                  //   ProductsRepo().getAllProducts();
+                  // },
+                  onPressed: () =>
+                      AutoRouter.of(context).push(const AuthRoute()),
+                  // onPressed: () async {
+                  //   final SharedPreferences prefs = await SharedPreferences.getInstance();
+                  //   var token = prefs.getString("token");
+                  //   Vx.log(token);
+                  // },
                 ),
                 SizedBox(height: 61.h),
                 Row(

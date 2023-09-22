@@ -1,4 +1,3 @@
-
 class ApiEndpointUrls {
   ApiEndpointUrls._();
 
@@ -6,4 +5,8 @@ class ApiEndpointUrls {
   static const product = "product";
   static const products = "products";
   static const categories = "categories";
+
+  //Auth
+  static const login = "login";
+  static const logout = "logout";
 }
